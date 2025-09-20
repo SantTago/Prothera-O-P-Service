@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Prothera | Nossa Missão: Transformar Vidas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal-custom': '#4FD1C7',
+                        'petrol': '#2C5F5D',
+                        'gray-light': '#F8F9FA'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body,
+        html {
+            /* Define a rolagem horizontal como oculta */
+            overflow-x: hidden;
+            /* Garante que o corpo e o html não excedam a largura da tela */
+            max-width: 100%;
+        }
+        .py-241 {
+            padding-top: 2rem;
+            padding-bottom: 6rem;
+        }
+    </style>
+
+
+</head>
+<body class="font-sans bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+               
+                
+                <!-- Logo -->
+                <div class="flex items-center">
+                   <div class="flex items-center space-x-3">
+                        <img style="width: 100px;" src="LOGO PROTHERA O&P.jpeg" alt="logo">
+                    </div>
+                </div>
+                
+
+
+                <!-- Navigation Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-petrol transition-colors">Início</a>
+                    <a href="Próteses.html" class="text-gray-700 hover:text-petrol transition-colors">Próteses</a>
+                    <a href="Órteses.html" class="text-gray-700 hover:text-petrol transition-colors">Órteses</a>
+                    <a href="Coletes 3D.html" class="text-gray-700 hover:text-petrol transition-colors">Coletes 3D</a>
+                    <a href="Produção.html" class="text-gray-700 hover:text-petrol transition-colors">Produção</a>
+                    <a href="Blog.html" class="text-gray-700 hover:text-petrol transition-colors">Blog</a>
+                    <a href="Sobre Nós.html" class="text-petrol font-semibold border-b-2 border-petrol pb-1">Sobre Nós</a>
+
+                </nav>
+                
+            
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-gray-700 hover:text-petrol py-2">Início</a>
+                    <a href="Próteses.html" class="text-gray-700 hover:text-petrol py-2">Próteses</a>
+                    <a href="Órteses.html" class="text-gray-700 hover:text-petrol py-2">Órteses</a>
+                    <a href="Coletes 3D.html" class="text-gray-700 hover:text-petrol py-2">Coletes 3D</a>
+                    <a href="Produção.html" class="text-gray-700 hover:text-petrol py-2">Produção</a>
+                    <a href="Blog.html" class="text-gray-700 hover:text-petrol py-2">Blog</a>
+                    <a href="Sobre Nós.html" class="text-petrol font-semibold py-2">Sobre Nós</a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-gray-light to-white py-241">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center ">
+                <div>
+                    <h1 class="text-4xl lg:text-6xl font-bold text-petrol mb-6 leading-tight">
+                        Nossa <span class="text-teal-custom">Missão:</span> Transformar Vidas, Devolver a Liberdade.
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Conheça a história da Prothera: a nossa paixão por reabilitação, inovação e, acima de tudo, o nosso compromisso com você. Cada dispositivo que criamos carrega nossa dedicação em devolver sua independência.
+                    </p>
+                    
+                </div>
+                <div class="relative">
+                    <!-- Team Photo Representation -->
+                    <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-2xl p-8 text-center text-white relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+                        <div class="relative z-10">
+                            <!-- Team visualization -->
+                            <div class="grid grid-cols-3 gap-4 mb-6">
+                                <!-- Team member representations -->
+                                <div class="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center">
+                                    <div class="text-2xl">👨‍⚕️</div>
+                                </div>
+                                <div class="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center">
+                                    <div class="text-2xl">👩‍⚕️</div>
+                                </div>
+                                <div class="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center">
+                                    <div class="text-2xl">👨‍🔬</div>
+                                </div>
+                                <div class="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center">
+                                    <div class="text-2xl">👩‍💼</div>
+                                </div>
+                                <div class="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center">
+                                    <div class="text-2xl">👨‍💻</div>
+                                </div>
+                                <div class="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center">
+                                    <div class="text-2xl">👩‍🔧</div>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-2">Equipe Prothera</h3>
+                            <p class="text-lg opacity-90">Unidos por um Propósito</p>
+                        </div>
+                        <!-- Decorative elements -->
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-white bg-opacity-20 rounded-full animate-pulse"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-white bg-opacity-10 rounded-full animate-pulse delay-300"></div>
+                        <div class="absolute top-1/2 left-4 w-6 h-6 bg-white bg-opacity-15 rounded-full animate-pulse delay-700"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossa História e Valores -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-petrol mb-4">
+                    Mais que uma Clínica, uma Família.
+                </h2>
+                <div class="w-24 h-1 bg-teal-custom mx-auto mb-8"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        A Prothera nasceu em 2015 do sonho de dois fisioterapeutas que acreditavam que a reabilitação poderia ir muito além do convencional. Dr. Carlos Mendes e Dra. Ana Silva, após anos trabalhando em hospitais e clínicas, perceberam que os pacientes precisavam de algo mais: um cuidado personalizado, tecnologia de ponta e, principalmente, esperança.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        O que começou como uma pequena clínica de reabilitação se transformou no maior centro especializado em próteses e órteses da região. Nossa missão sempre foi clara: devolver não apenas a mobilidade, mas a confiança e a alegria de viver de cada pessoa que nos procura.
+                    </p>
+                    <div class="bg-gray-light p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-teal-custom rounded-full p-3 mr-4">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-petrol">Nossa Filosofia</h3>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "Acreditamos que cada pessoa merece viver sua vida com dignidade, independência e alegria. Nossa tecnologia é apenas o meio - o fim é sempre o sorriso de satisfação de nossos pacientes."
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Valores Cards -->
+                    <div class="bg-gradient-to-br from-teal-custom to-petrol text-white p-6 rounded-xl text-center">
+                        <div class="text-4xl mb-4">❤️</div>
+                        <h4 class="font-semibold mb-2">Humanização</h4>
+                        <p class="text-sm opacity-90">Nosso foco principal é o paciente, não apenas o tratamento.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-petrol to-teal-custom text-white p-6 rounded-xl text-center">
+                        <div class="text-4xl mb-4">🚀</div>
+                        <h4 class="font-semibold mb-2">Inovação</h4>
+                        <p class="text-sm opacity-90">Buscamos constantemente as melhores tecnologias do mercado.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-teal-custom to-petrol text-white p-6 rounded-xl text-center">
+                        <div class="text-4xl mb-4">⭐</div>
+                        <h4 class="font-semibold mb-2">Excelência</h4>
+                        <p class="text-sm opacity-90">Tudo o que fazemos é com a máxima qualidade e precisão.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-petrol to-teal-custom text-white p-6 rounded-xl text-center">
+                        <div class="text-4xl mb-4">🤝</div>
+                        <h4 class="font-semibold mb-2">Transparência</h4>
+                        <p class="text-sm opacity-90">Relacionamento honesto e claro com cada paciente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A Equipe Prothera -->
+    <section class="py-20 bg-gray-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-petrol mb-4">
+                    Quem Somos: Os Especialistas por Trás de Cada Solução.
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Conheça os profissionais dedicados que fazem da Prothera um centro de excelência em reabilitação e tecnologia ortopédica.
+                </p>
+                <div class="w-24 h-1 bg-teal-custom mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <div class="bg-gradient-to-br from-teal-custom to-petrol h-48 flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <div class="bg-white bg-opacity-20 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+                                <div class="text-4xl">👨‍⚕️</div>
+                            </div>
+                            <span class="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">Diretor Clínico</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-petrol mb-2">Dr. Carlos Mendes</h3>
+                        <p class="text-teal-custom font-medium mb-4">Fisioterapeuta e Diretor Clínico</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Formado pela USP com especialização em Ortopedia e Traumatologia. Com mais de 15 anos de experiência, Dr. Carlos é pioneiro no uso de tecnologia 3D para reabilitação no Brasil. Sua paixão é ver cada paciente recuperar sua independência.
+                        </p>
+                        <div class="mt-4 flex space-x-2">
+                            <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">CRM 12345-SP</span>
+                            <span class="bg-teal-custom bg-opacity-10 text-teal-custom px-2 py-1 rounded text-xs">15+ anos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <div class="bg-gradient-to-br from-petrol to-teal-custom h-48 flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <div class="bg-white bg-opacity-20 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+                                <div class="text-4xl">👩‍⚕️</div>
+                            </div>
+                            <span class="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">Coordenadora</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-petrol mb-2">Dra. Ana Silva</h3>
+                        <p class="text-teal-custom font-medium mb-4">Fisioterapeuta e Coordenadora Técnica</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Especialista em Reabilitação Neurológica pela UNIFESP. Dra. Ana é responsável pelos protocolos de atendimento e pela capacitação contínua da equipe. Sua dedicação ao cuidado humanizado é reconhecida por todos os pacientes.
+                        </p>
+                        <div class="mt-4 flex space-x-2">
+                            <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">CRM 67890-SP</span>
+                            <span class="bg-teal-custom bg-opacity-10 text-teal-custom px-2 py-1 rounded text-xs">12+ anos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <div class="bg-gradient-to-br from-teal-custom to-petrol h-48 flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <div class="bg-white bg-opacity-20 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+                                <div class="text-4xl">👨‍🔬</div>
+                            </div>
+                            <span class="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">Técnico Sênior</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-petrol mb-2">João Santos</h3>
+                        <p class="text-teal-custom font-medium mb-4">Técnico em Próteses e Órteses</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Formado pelo SENAI com certificação internacional em fabricação de dispositivos ortopédicos. João é o responsável pela produção e ajustes finos de todas as próteses e órteses, garantindo o perfeito encaixe e funcionalidade.
+                        </p>
+                        <div class="mt-4 flex space-x-2">
+                            <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">Cert. Internacional</span>
+                            <span class="bg-teal-custom bg-opacity-10 text-teal-custom px-2 py-1 rounded text-xs">10+ anos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <div class="bg-gradient-to-br from-petrol to-teal-custom h-48 flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <div class="bg-white bg-opacity-20 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+                                <div class="text-4xl">👩‍💼</div>
+                            </div>
+                            <span class="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">Atendimento</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-petrol mb-2">Maria Oliveira</h3>
+                        <p class="text-teal-custom font-medium mb-4">Coordenadora de Atendimento</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Formada em Administração com especialização em Gestão Hospitalar. Maria é o primeiro contato dos pacientes com a Prothera, garantindo que cada pessoa se sinta acolhida desde o primeiro momento. Sua empatia é contagiante.
+                        </p>
+                        <div class="mt-4 flex space-x-2">
+                            <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">Gestão Hospitalar</span>
+                            <span class="bg-teal-custom bg-opacity-10 text-teal-custom px-2 py-1 rounded text-xs">8+ anos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <div class="bg-gradient-to-br from-teal-custom to-petrol h-48 flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <div class="bg-white bg-opacity-20 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+                                <div class="text-4xl">👨‍💻</div>
+                            </div>
+                            <span class="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">Tecnologia</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-petrol mb-2">Rafael Costa</h3>
+                        <p class="text-teal-custom font-medium mb-4">Especialista em Tecnologia 3D</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Engenheiro Biomédico formado pela UNICAMP. Rafael é responsável por toda a tecnologia de escaneamento e impressão 3D da clínica. Sua expertise garante que cada dispositivo seja perfeitamente personalizado para cada paciente.
+                        </p>
+                        <div class="mt-4 flex space-x-2">
+                            <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">Eng. Biomédico</span>
+                            <span class="bg-teal-custom bg-opacity-10 text-teal-custom px-2 py-1 rounded text-xs">6+ anos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 6 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <div class="bg-gradient-to-br from-petrol to-teal-custom h-48 flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <div class="bg-white bg-opacity-20 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+                                <div class="text-4xl">👩‍🔧</div>
+                            </div>
+                            <span class="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">Produção</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-petrol mb-2">Carla Ferreira</h3>
+                        <p class="text-teal-custom font-medium mb-4">Técnica em Órteses Especializadas</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Especialista em coletes e órteses de coluna com formação técnica pelo Instituto Federal. Carla é conhecida pela precisão e cuidado na confecção de cada peça, sempre buscando o máximo conforto e eficácia para os pacientes.
+                        </p>
+                        <div class="mt-4 flex space-x-2">
+                            <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">Técnico IF</span>
+                            <span class="bg-teal-custom bg-opacity-10 text-teal-custom px-2 py-1 rounded text-xs">9+ anos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossa Estrutura -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-petrol mb-4">
+                    Tecnologia e Acolhimento em Um Só Lugar.
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Nossa infraestrutura foi pensada para oferecer o melhor em tecnologia sem perder o calor humano que nos define.
+                </p>
+                <div class="w-24 h-1 bg-teal-custom mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <!-- Laboratório de Produção -->
+                <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-xl p-8 text-white text-center">
+                    <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <div class="text-3xl">🏭</div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Laboratório de Produção</h3>
+                    <p class="opacity-90 mb-6">
+                        Laboratório próprio com tecnologia de ponta para fabricação de próteses e órteses personalizadas.
+                    </p>
+                    <ul class="text-sm space-y-2 opacity-90">
+                        <li>✓ Impressoras 3D de alta precisão</li>
+                        <li>✓ Scanner corporal 3D</li>
+                        <li>✓ Materiais de última geração</li>
+                        <li>✓ Controle de qualidade rigoroso</li>
+                    </ul>
+                </div>
+
+                <!-- Salas de Atendimento -->
+                <div class="bg-gradient-to-br from-petrol to-teal-custom rounded-xl p-8 text-white text-center">
+                    <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <div class="text-3xl">🏥</div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Salas de Atendimento</h3>
+                    <p class="opacity-90 mb-6">
+                        Ambientes confortáveis e acolhedores, preparados para receber você e sua família.
+                    </p>
+                    <ul class="text-sm space-y-2 opacity-90">
+                        <li>✓ Salas climatizadas</li>
+                        <li>✓ Equipamentos modernos</li>
+                        <li>✓ Ambiente acessível</li>
+                        <li>✓ Privacidade garantida</li>
+                    </ul>
+                </div>
+
+                <!-- Equipamentos -->
+                <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-xl p-8 text-white text-center">
+                    <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <div class="text-3xl">⚙️</div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Equipamentos de Ponta</h3>
+                    <p class="opacity-90 mb-6">
+                        Tecnologia avançada para diagnóstico, medição e acompanhamento de cada caso.
+                    </p>
+                    <ul class="text-sm space-y-2 opacity-90">
+                        <li>✓ Escaneamento 3D corporal</li>
+                        <li>✓ Análise de marcha</li>
+                        <li>✓ Testes biomecânicos</li>
+                        <li>✓ Simulação virtual</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Facility Tour Visual -->
+            <div class="bg-gray-light rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-petrol text-center mb-8">Tour Virtual pela Nossa Clínica</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-lg h-32 flex items-center justify-center text-white text-4xl mb-4">
+                            🚪
+                        </div>
+                        <h4 class="font-semibold text-petrol mb-2">Recepção</h4>
+                        <p class="text-sm text-gray-600">Ambiente acolhedor para receber você</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-petrol to-teal-custom rounded-lg h-32 flex items-center justify-center text-white text-4xl mb-4">
+                            🔬
+                        </div>
+                        <h4 class="font-semibold text-petrol mb-2">Laboratório</h4>
+                        <p class="text-sm text-gray-600">Onde a magia da tecnologia acontece</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-lg h-32 flex items-center justify-center text-white text-4xl mb-4">
+                            🏥
+                        </div>
+                        <h4 class="font-semibold text-petrol mb-2">Consultórios</h4>
+                        <p class="text-sm text-gray-600">Espaços privados para avaliação</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-petrol to-teal-custom rounded-lg h-32 flex items-center justify-center text-white text-4xl mb-4">
+                            🎯
+                        </div>
+                        <h4 class="font-semibold text-petrol mb-2">Ajustes</h4>
+                        <p class="text-sm text-gray-600">Sala para testes e ajustes finais</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missão, Visão e Valores -->
+    <section class="py-20 bg-gradient-to-br from-petrol to-teal-custom text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+                    Nossos Pilares.
+                </h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Os princípios que guiam cada decisão e cada atendimento na Prothera.
+                </p>
+                <div class="w-24 h-1 bg-white mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Missão -->
+                <div class="bg-white bg-opacity-10 rounded-xl p-8 text-center backdrop-blur-sm">
+                    <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <div class="text-3xl">🎯</div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Missão</h3>
+                    <p class="text-lg opacity-90 leading-relaxed">
+                        "Devolver a liberdade e a qualidade de vida aos nossos pacientes através de soluções ortopédicas de alta performance."
+                    </p>
+                </div>
+
+                <!-- Visão -->
+                <div class="bg-white bg-opacity-10 rounded-xl p-8 text-center backdrop-blur-sm">
+                    <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <div class="text-3xl">🔮</div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Visão</h3>
+                    <p class="text-lg opacity-90 leading-relaxed">
+                        "Ser a referência em tecnologia e cuidado humanizado no setor de órteses e próteses."
+                    </p>
+                </div>
+
+                <!-- Valores -->
+                <div class="bg-white bg-opacity-10 rounded-xl p-8 text-center backdrop-blur-sm">
+                    <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <div class="text-3xl">💎</div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Valores</h3>
+                    <div class="text-lg opacity-90 leading-relaxed">
+                        <p class="mb-2">• Humanização</p>
+                        <p class="mb-2">• Inovação</p>
+                        <p class="mb-2">• Excelência</p>
+                        <p>• Transparência</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-petrol mb-6">
+                Faça Parte da Nossa História.
+            </h2>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                Estamos aqui para ajudar você a conquistar sua liberdade de movimento. Fale com a gente e comece a sua jornada de transformação. Cada história de sucesso que vivenciamos nos motiva a continuar inovando e cuidando.
+            </p>
+            
+            
+            <!-- Stats md:grid-cols-4 gap-8 bg-gray-light rounded-2xl p-8">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-petrol mb-2">500+</div>
+                    <p class="text-gray-600">Vidas Transformadas</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-petrol mb-2">8</div>
+                    <p class="text-gray-600">Anos de Experiência</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-petrol mb-2">98%</div>
+                    <p class="text-gray-600">Satisfação dos Pacientes</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-petrol mb-2">24h</div>
+                    <p class="text-gray-600">Suporte Disponível</p>
+                </div>
+            </div>
+             -->
+            
+        </div>
+    </section>
+
+   <!-- Footer -->
+  
+    <footer class="bg-petrol text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mt-12 mb-8 px-4 sm:px-6 lg:px-8">
+                    <div class="bg-gray-700 rounded-xl overflow-hidden shadow-lg">
+                        <div class="relative" style="padding-top: 56.25%;">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.014044764572!2d-38.513461299999996!3d-3.7406110999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74994fc1eb5f9%3A0xeda848d43e2198c4!2sProthera%20O%26P%20Service!5e1!3m2!1spt-BR!2sbr!4v1758393982674!5m2!1spt-BR!2sbr" 
+                                class="absolute inset-0 w-full h-full" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="p-8 text-white text-center">
+                            <h4 class="text-2xl font-bold mb-2">Nossa Localização</h4>
+                            <p class="text-gray-300">Endereço da Empresa</p>
+                            <p class="text-gray-400 mt-2">Clique no mapa para rotas</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+
+                
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white text-petrol px-4 py-2 rounded-lg font-bold text-xl mb-6 inline-block">
+                        PROTHERA
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Transformando vidas através da tecnologia ortopédica com qualidade, inovação e cuidado humanizado. Há mais de 15 anos devolvendo movimento, liberdade e vida aos nossos pacientes.
+                    </p>
+                    <!--
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white bg-opacity-10 p-3 rounded-full hover:bg-opacity-20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-10 p-3 rounded-full hover:bg-opacity-20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-10 p-3 rounded-full hover:bg-opacity-20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-10 p-3 rounded-full hover:bg-opacity-20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    --> 
+                </div>
+                
+                <!-- Navigation -->
+                <div>
+                    <h4 class="font-semibold mb-6 text-lg">Navegação</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Início</a></li>
+                        <li><a href="Próteses.html" class="hover:text-white transition-colors">Próteses</a></li>
+                        <li><a href="Órteses.html" class="hover:text-white transition-colors">Órteses</a></li>
+                        <li><a href="Coletes 3D.html" class="hover:text-white transition-colors">Coletes 3D</a></li>
+                        <li><a href="Sobre Nós.html" class="hover:text-white transition-colors">Sobre Nós</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-6 text-lg">Serviços</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="Produção.html" class="hover:text-white transition-colors">Produção</a></li>
+                        <li><a href="Blog.html" class="hover:text-white transition-colors">Blog</a></li>
+                     
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-6 text-lg">Contato</h4>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p>R. Carlos Vasconcelos, 2140 - Aldeota, <br>Fortaleza - CE, 60115-044</p>
+                        <p> (19) 99398-9975
+                    
+                        <div class="mt-4">
+                            <p class="font-medium text-white mb-2">Horário:</p>
+                            <p>Seg-Sex: 08:00h às 18:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-600 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                    <p class="text-gray-300">© 2025 Prothera. Todos os direitos reservados.</p>
+
+                   
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // Team card hover effects
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Animate stats on scroll
+        function animateStats() {
+            const stats = document.querySelectorAll('.text-3xl.font-bold.text-petrol');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const originalText = target.textContent.trim();
+                        
+                        // Extract number and suffix
+                        let finalNumber = 0;
+                        let suffix = '';
+                        
+                        if (originalText.includes('+')) {
+                            finalNumber = parseInt(originalText.replace('+', ''));
+                            suffix = '+';
+                        } else if (originalText.includes('%')) {
+                            finalNumber = parseInt(originalText.replace('%', ''));
+                            suffix = '%';
+                        } else if (originalText.includes('h')) {
+                            finalNumber = parseInt(originalText.replace('h', ''));
+                            suffix = 'h';
+                        } else {
+                            finalNumber = parseInt(originalText);
+                            suffix = '';
+                        }
+                        
+                        // Only animate if we have a valid number
+                        if (!isNaN(finalNumber) && finalNumber > 0) {
+                            let currentValue = 0;
+                            const increment = finalNumber / 50;
+                            
+                            const timer = setInterval(() => {
+                                currentValue += increment;
+                                if (currentValue >= finalNumber) {
+                                    target.textContent = finalNumber + suffix;
+                                    clearInterval(timer);
+                                } else {
+                                    target.textContent = Math.floor(currentValue) + suffix;
+                                }
+                            }, 30);
+                        }
+                        
+                        observer.unobserve(target);
+                    }
+                });
+            });
+            
+            stats.forEach(stat => observer.observe(stat));
+        }
+
+        // Initialize animations when page loads
+        window.addEventListener('load', animateStats);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9822c731b693ba1a',t:'MTc1ODM4NjU2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

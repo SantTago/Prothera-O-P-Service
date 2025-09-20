@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prothera - Centro de Excelência em Órteses e Próteses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #3cc1c8 0%, #2ba8b0 50%, #1e7e85 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3cc1c8, #1e7e85);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .hover-lift:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        .mega-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+            transition: all 0.4s ease;
+        }
+        .mega-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .floating-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        .stats-counter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #3cc1c8, #1e7e85);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-slide-in {
+            animation: slideIn 0.8s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .testimonial-card {
+            background: linear-gradient(145deg, #ffffff, #f1f5f9);
+            border-left: 4px solid #3cc1c8;
+        }
+        .service-icon {
+            background: linear-gradient(135deg, #3cc1c8, #2ba8b0);
+            box-shadow: 0 8px 25px rgba(60, 193, 200, 0.3);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #3cc1c8, #1e7e85);
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #3cc1c8, #1e7e85);
+            animation: progressFill 2s ease-out forwards;
+        }
+        @keyframes progressFill {
+            from { width: 0%; }
+        }
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        .section-divider {
+            background: linear-gradient(90deg, transparent, #3cc1c8, transparent);
+            height: 2px;
+        }
+        .interactive-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .interactive-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3cc1c8;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+        }
+        .notification.show {
+            transform: translateX(0);
+        }
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3cc1c8, #1e7e85);
+            box-shadow: 0 8px 25px rgba(60, 193, 200, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(60, 193, 200, 0.6);
+        }
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(60, 193, 200, 0.2);
+            z-index: 1000;
+        }
+        .scroll-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3cc1c8, #1e7e85);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .certification-badge {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .certification-badge:hover {
+            border-color: #3cc1c8;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+
+<body class="bg-white text-gray-900">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scroll-progress"></div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span id="notification-text">Mensagem enviada com sucesso!</span>
+        </div>
+    </div>
+
+    <!-- Header Premium -->
+    <header class="bg-white shadow-xl sticky top-0 z-50">
+        <!-- Top Bar -->
+        <div class="bg-gray-900 text-white py-3">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center text-sm">
+                    <div class="flex items-center space-x-8">
+                        <span class="flex items-center hover:text-teal-400 transition-colors">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            (11) 3456-7890
+                        </span>
+                        <span class="flex items-center hover:text-teal-400 transition-colors">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            contato@prothera.com.br
+                        </span>
+                        <span class="hidden md:flex items-center">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                            Atendimento 24h para Emergências
+                        </span>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <span class="hidden lg:block">Seg-Sex: 7h-19h | Sáb: 8h-14h</span>
+                        <div class="flex space-x-3">
+                            <!--
+                            <a href="#" class="hover:text-teal-400 transition-colors transform hover:scale-110">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="hover:text-teal-400 transition-colors transform hover:scale-110">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                                </svg>
+                            </a>
+                            -->
+                            <a href="#" class="hover:text-teal-400 transition-colors transform hover:scale-110">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                             <!--
+                            <a href="#" class="hover:text-teal-400 transition-colors transform hover:scale-110">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+            <img style="width: 100px;" src="LOGO PROTHERA O&P.jpeg" alt="logo">
+        </div>
+
+        <nav class="hidden lg:flex items-center space-x-8">
+            <a href="#inicio" class="flex items-center text-gray-700 font-semibold hover:text-teal-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-teal-50">
+                Início
+            </a>
+            
+            <a href="#proteses" class="flex items-center text-gray-700 font-semibold hover:text-teal-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-teal-50">
+                Próteses
+            </a>
+            
+            <a href="#orteses" class="flex items-center text-gray-700 font-semibold hover:text-teal-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-teal-50">
+                Órteses
+            </a>
+
+            <a href="#coletes-3d" class="flex items-center text-gray-700 font-semibold hover:text-teal-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-teal-50">
+                Coletes 3D
+            </a>
+
+            <a href="#producao" class="text-gray-700 font-semibold hover:text-teal-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-teal-50">Produção</a>
+            <a href="#blog" class="text-gray-700 font-semibold hover:text-teal-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-teal-50">Blog</a>
+            <a href="#sobre" class="text-gray-700 font-semibold hover:text-teal-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-teal-50">Sobre Nós</a>
+            <a href="#contato" class="text-gray-700 font-semibold hover:text-teal-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-teal-50">Contato</a>
+        </nav>
+
+        <button id="mobile-menu-btn" class="lg:hidden p-3 rounded-xl hover:bg-gray-100 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden hidden pb-6 border-t border-gray-200 mt-4">
+        <div class="flex flex-col space-y-3 pt-6">
+            <a href="#inicio" class="text-gray-700 py-3 px-4 rounded-xl hover:bg-teal-50 hover:text-teal-600 transition-colors font-semibold">Início</a>
+            <a href="#proteses" class="text-gray-700 py-3 px-4 rounded-xl hover:bg-teal-50 hover:text-teal-600 transition-colors font-semibold">Próteses</a>
+            <a href="#orteses" class="text-gray-700 py-3 px-4 rounded-xl hover:bg-teal-50 hover:text-teal-600 transition-colors font-semibold">Órteses</a>
+            <a href="#coletes-3d" class="text-gray-700 py-3 px-4 rounded-xl hover:bg-teal-50 hover:text-teal-600 transition-colors font-semibold">Coletes 3D</a>
+            <a href="#producao" class="text-gray-700 py-3 px-4 rounded-xl hover:bg-teal-50 hover:text-teal-600 transition-colors font-semibold">Produção</a>
+            <a href="#blog" class="text-gray-700 py-3 px-4 rounded-xl hover:bg-teal-50 hover:text-teal-600 transition-colors font-semibold">Blog</a>
+            <a href="#sobre" class="text-gray-700 py-3 px-4 rounded-xl hover:bg-teal-50 hover:text-teal-600 transition-colors font-semibold">Sobre Nós</a>
+            <a href="#contato" class="text-gray-700 py-3 px-4 rounded-xl hover:bg-teal-50 hover:text-teal-600 transition-colors font-semibold">Contato</a>
+        </div>
+    </div>
+</div>
+    </header>
+<!-- JavaScript -->
+    <script>
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+
+        // Mobile Menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Mega Menu Hover
+        document.querySelectorAll('.group').forEach(group => {
+            const menu = group.querySelector('.mega-menu');
+            if (menu) {
+                group.addEventListener('mouseenter', () => {
+                    menu.classList.add('active');
+                });
+                group.addEventListener('mouseleave', () => {
+                    menu.classList.remove('active');
+                });
+            }
+        });
+
+        // Smooth Scroll
+        function scrollToContact() {
+            document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Chat Function
+        function openChat() {
+            // Simulate WhatsApp opening
+            window.open('https://wa.me/5511999998888?text=Olá! Gostaria de saber mais sobre os serviços da Prothera.', '_blank');
+        }
+
+        // Form Submission
+        document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<div class="loading-spinner mx-auto"></div>';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Show success notification
+                const notification = document.getElementById('notification');
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+                
+                // Reset form
+                e.target.reset();
+            }, 2000);
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                const suffix = counter.textContent.replace(/\d/g, '');
+                let current = 0;
+                const increment = target / 100;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + suffix;
+                    }
+                }, 20);
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.stats-counter').forEach(counter => {
+            statsObserver.observe(counter.parentElement);
+        });
+
+        // Close modals when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+
+        // Add loading states to interactive cards
+        document.querySelectorAll('.interactive-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    card.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'980b383cf35dba1a',t:'MTc1ODEzOTU0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+
+
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+
+        .hero-bg {
+            background-image: url('midia/Design\ sem\ nome.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .panther-icon {
+            width: 24px;
+            height: 24px;
+            fill: #3cc1c8;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header -->
+   
+
+    <!-- Hero Section -->
+    <section  id="inicio" class="hero-bg py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    Transformando Vidas Através da 
+                    <span style="color: #3cc1c8;">Mobilidade</span>
+                </h1>
+                <p style="color: white;" class="text-xl lg:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
+                    Especialistas em Órteses e Próteses Personalizadas para Sua Saúde e Bem-Estar
+                </p>
+                <button onclick="scrollToContact()" class="text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg" style="background-color: #3cc1c8;" onmouseover="this.style.backgroundColor='#2ba8b0'" onmouseout="this.style.backgroundColor='#3cc1c8'">
+                    Agende sua Avaliação Gratuita
+                </button>
+            </div>
+        </div>
+    </section >
+
+    
+    <div id="sobre" >
+
+    </div>
+    
+    <!-- Sobre Nós Section -->
+    <section  class="py-20 bg-gray-50">
+        <div  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <svg class="panther-icon mr-3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 35 Q35 25 50 35 Q65 25 75 35 Q70 45 60 50 Q70 55 75 65 Q65 75 50 65 Q35 75 25 65 Q30 55 40 50 Q30 45 25 35 Z"/>
+                        </svg>
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Sobre a Prothera</h2>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Na Prothera, nossa missão é devolver a mobilidade e a confiança para cada pessoa que atendemos. 
+                        Com anos de experiência e uma equipe altamente qualificada, oferecemos soluções personalizadas 
+                        em órteses e próteses.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Acreditamos que cada paciente é único, por isso desenvolvemos equipamentos sob medida, 
+                        utilizando tecnologia de ponta e materiais de alta qualidade para garantir conforto, 
+                        funcionalidade e durabilidade.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-3xl font-bold" style="color: #3cc1c8;">500+</div>
+                            <div class="text-gray-600">Pacientes Atendidos</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold" style="color: #3cc1c8;">10+</div>
+                            <div class="text-gray-600">Anos de Experiência</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold" style="color: #3cc1c8;">98%</div>
+                            <div class="text-gray-600">Satisfação</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-full  bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl flex items-center justify-center mb-6">
+                        <img src="midia/Design sem nome.gif" alt="">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Nossa Equipe Especializada</h3>
+                    <p class="text-gray-600">
+                        Profissionais certificados e especializados em ortopedia técnica, 
+                        sempre atualizados com as mais recentes tecnologias e técnicas do mercado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+    /* Adicione este bloco de estilo no seu arquivo CSS
+    ou dentro de uma tag <style> no seu HTML, no cabeçalho.
+    */
+    @keyframes fadeInSlideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-on-load {
+        opacity: 0; /* Inicia com opacidade zero para a animação */
+        animation: fadeInSlideUp 0.8s ease-out forwards;
+    }
+
+    /* Atraso para cada uma das caixas, criando um efeito cascata */
+    .animate-on-load:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+    .animate-on-load:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+    .animate-on-load:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+    .animate-on-load:nth-child(4) {
+        animation-delay: 0.8s;
+    }
+</style>
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">Sua Jornada para o Conforto e Bem-Estar</h2>
+            <p class="text-xl text-gray-600">Transformamos seu tratamento em uma experiência incrível, do começo ao fim!</p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center animate-on-load">
+                <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color: rgba(60, 193, 200, 0.1);">
+                    <span class="text-2xl font-bold" style="color: #3cc1c8;">1</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Começamos com Você</h3>
+                <p class="text-gray-600">Uma conversa para conhecermos suas necessidades, ouvir sua história e planejar o futuro do seu tratamento, juntos.</p>
+            </div>
+
+            <div class="text-center animate-on-load">
+                <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color: rgba(60, 193, 200, 0.1);">
+                    <span class="text-2xl font-bold" style="color: #3cc1c8;">2</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Criado Sob Medida</h3>
+                <p class="text-gray-600">Usamos tecnologia de ponta e um toque artesanal para tirar suas medidas e criar o molde perfeito para o seu corpo.</p>
+            </div>
+
+            <div class="text-center animate-on-load">
+                <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color: rgba(60, 193, 200, 0.1);">
+                    <span class="text-2xl font-bold" style="color: #3cc1c8;">3</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">A Magia Acontece</h3>
+                <p class="text-gray-600">Nossa equipe de especialistas dá vida ao seu equipamento com materiais de alta qualidade e um cuidado impecável em cada detalhe.</p>
+            </div>
+
+            <div class="text-center animate-on-load">
+                <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color: rgba(60, 193, 200, 0.1);">
+                    <span class="text-2xl font-bold" style="color: #3cc1c8;">4</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Feito para Você</h3>
+                <p class="text-gray-600">Chegou a hora! Entregamos seu equipamento, fazemos os ajustes finais e garantimos que você se sinta 100% confortável e confiante para usá-lo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Nossos Serviços</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Oferecemos soluções completas e personalizadas para atender às suas necessidades específicas
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Órteses -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style="background-color: rgba(60, 193, 200, 0.1);">
+                        <svg class="w-8 h-8" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM8.5 7H15.5C16.3 7 17 7.7 17 8.5V11H15V22H9V11H7V8.5C7 7.7 7.7 7 8.5 7Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Órteses</h3>
+                    <p class="text-gray-600 mb-6">
+                        Dispositivos externos que auxiliam, corrigem ou melhoram a função de partes do corpo. 
+                        Desenvolvemos órteses para membros superiores, inferiores e coluna vertebral.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Órteses de joelho
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Órteses de tornozelo
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Órteses de coluna
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Próteses -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style="background-color: rgba(60, 193, 200, 0.1);">
+                        <svg class="w-8 h-8" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM15.5 7C16.3 7 17 7.7 17 8.5V11H15V22H13V16H11V22H9V11H7V8.5C7 7.7 7.7 7 8.5 7H15.5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Próteses</h3>
+                    <p class="text-gray-600 mb-6">
+                        Dispositivos que substituem total ou parcialmente um membro ou órgão. 
+                        Criamos próteses funcionais e estéticas com tecnologia avançada.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Próteses de perna
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Próteses de braço
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Próteses miolétricas
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Acessórios -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style="background-color: rgba(60, 193, 200, 0.1);">
+                        <svg class="w-8 h-8" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2ZM8 21L9.5 16.5L14 18L9.5 19.5L8 21ZM16 21L14.5 19.5L10 18L14.5 16.5L16 21Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Acessórios</h3>
+                    <p class="text-gray-600 mb-6">
+                        Complementos e acessórios especializados para melhorar o conforto, 
+                        funcionalidade e durabilidade de órteses e próteses.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Capas protetoras
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Sistemas de suspensão
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" style="color: #3cc1c8;" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Materiais de conforto
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologias e Materiais Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Tecnologias e Materiais</h2>
+                <p class="text-xl text-gray-600">Utilizamos os mais avançados materiais e tecnologias do mercado</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Materiais de Alta Performance</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0" style="background-color: #3cc1c8;"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Fibra de Carbono</h4>
+                                <p class="text-gray-600">Ultra leve e resistente, ideal para próteses de alta performance</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0" style="background-color: #3cc1c8;"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Polipropileno Termoplástico</h4>
+                                <p class="text-gray-600">Flexível e durável, perfeito para órteses de uso diário</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0" style="background-color: #3cc1c8;"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Silicone Médico</h4>
+                                <p class="text-gray-600">Biocompatível e confortável para contato prolongado com a pele</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0" style="background-color: #3cc1c8;"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Titânio</h4>
+                                <p class="text-gray-600">Componentes estruturais de máxima resistência e leveza</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <div class="w-full  bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl flex items-center justify-center mb-6">
+                        <img src="midia/Design sem nome.gif" alt="">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Tecnologia de Ponta</h3>
+                    <p class="text-gray-600">
+                        Utilizamos scanners 3D, impressão 3D e software especializado para garantir 
+                        o ajuste perfeito e máximo conforto em cada equipamento produzido.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialidades Médicas Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Especialidades Atendidas</h2>
+                <p class="text-xl text-gray-600">Atendemos diversas condições e necessidades médicas</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Amputações</h3>
+                    <p class="text-gray-600 text-sm">Próteses para amputações de membros superiores e inferiores</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Lesões Neurológicas</h3>
+                    <p class="text-gray-600 text-sm">AVC, paralisia cerebral, lesão medular</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Lesões Ortopédicas</h3>
+                    <p class="text-gray-600 text-sm">Fraturas, entorses, lesões ligamentares</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Malformações Congênitas</h3>
+                    <p class="text-gray-600 text-sm">Agenesia, focomelia, outras malformações</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Diabetes</h3>
+                    <p class="text-gray-600 text-sm">Órteses para pé diabético e complicações</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Esportes</h3>
+                    <p class="text-gray-600 text-sm">Órteses esportivas e próteses para atletas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Perguntas Frequentes</h2>
+                <p class="text-xl text-gray-600">Esclarecemos as principais dúvidas sobre órteses e próteses</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                    <button class="faq-button w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors">
+                        <span class="text-lg font-semibold text-gray-900">Quanto tempo leva para fazer uma prótese?</span>
+                        <svg class="w-6 h-6 transform transition-transform faq-icon" style="color: #3cc1c8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <p class="text-gray-600">O tempo varia de acordo com o tipo de prótese. Próteses simples levam de 2 a 4 semanas, enquanto próteses mais complexas podem levar de 6 a 8 semanas. Isso inclui avaliação, medição, fabricação e ajustes finais.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                    <button class="faq-button w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors">
+                        <span class="text-lg font-semibold text-gray-900">As órteses são cobertas pelo plano de saúde?</span>
+                        <svg class="w-6 h-6 transform transition-transform faq-icon" style="color: #3cc1c8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <p class="text-gray-600">Sim, a maioria dos planos de saúde cobre órteses e próteses quando prescritas por médico. Também atendemos pelo SUS. Nossa equipe auxilia com toda a documentação necessária para aprovação.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                    <button class="faq-button w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors">
+                        <span class="text-lg font-semibold text-gray-900">Posso praticar esportes com prótese?</span>
+                        <svg class="w-6 h-6 transform transition-transform faq-icon" style="color: #3cc1c8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <p class="text-gray-600">Absolutamente! Fabricamos próteses específicas para atividades esportivas. Temos experiência com atletas paralímpicos e amadores. Cada prótese esportiva é desenvolvida considerando o tipo de esporte e nível de atividade.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                    <button class="faq-button w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors">
+                        <span class="text-lg font-semibold text-gray-900">Como cuidar da minha órtese/prótese?</span>
+                        <svg class="w-6 h-6 transform transition-transform faq-icon" style="color: #3cc1c8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <p class="text-gray-600">Limpeza diária com água morna e sabão neutro, secagem completa antes do uso, inspeção regular para detectar desgastes e revisões periódicas em nossa clínica. Fornecemos manual completo de cuidados.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                    <button class="faq-button w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors">
+                        <span class="text-lg font-semibold text-gray-900">Vocês fazem reparos e ajustes?</span>
+                        <svg class="w-6 h-6 transform transition-transform faq-icon" style="color: #3cc1c8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <p class="text-gray-600">Sim! Oferecemos serviço completo de manutenção, reparos e ajustes. Nossos equipamentos têm garantia e oferecemos suporte técnico contínuo. Ajustes menores são gratuitos no primeiro ano.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificações e Parcerias Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Certificações e Parcerias</h2>
+                <p class="text-xl text-gray-600">Reconhecimento e parcerias que garantem nossa excelência</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Colocar aqui o nome</h3>
+                    <p class="text-gray-600 text-sm">Certificação de qualidade internacional</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 12L11 14L15 10M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">ANVISA</h3>
+                    <p class="text-gray-600 text-sm">Registro na Agência Nacional de Vigilância Sanitária</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5V9M15 11.5C15.8 11.5 16.5 12.2 16.5 13S15.8 14.5 15 14.5 13.5 13.8 13.5 13 14.2 11.5 15 11.5M5 12C5.8 12 6.5 12.7 6.5 13.5S5.8 15 5 15 3.5 14.3 3.5 13.5 4.2 12 5 12Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">COFFITO</h3>
+                    <p class="text-gray-600 text-sm">Conselho Federal de Fisioterapia e Terapia Ocupacional</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-teal-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">SUS</h3>
+                    <p class="text-gray-600 text-sm">Credenciado no Sistema Único de Saúde</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">O Que Nossos Pacientes Dizem</h2>
+                <p class="text-xl text-gray-600">Histórias reais de transformação e superação</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold">
+                            M
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-900">Maria Silva</h4>
+                            <p class="text-gray-600 text-sm">Prótese de perna</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">
+                        "A equipe da Prothera me devolveu a confiança para caminhar novamente. 
+                        A prótese é perfeita e o atendimento é excepcional. Recomendo de olhos fechados!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold">
+                            J
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-900">João Santos</h4>
+                            <p class="text-gray-600 text-sm">Órtese de joelho</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">
+                        "Depois de anos com dor no joelho, a órtese personalizada da Prothera 
+                        me permitiu voltar a praticar esportes. Qualidade excepcional!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold">
+                            A
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-900">Ana Costa</h4>
+                            <p class="text-gray-600 text-sm">Prótese de braço</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">
+                        "Profissionais extremamente competentes e atenciosos. 
+                        Minha prótese funciona perfeitamente e me sinto completamente adaptada."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section id="galeria" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Nossa Galeria</h2>
+                <p class="text-xl text-gray-600">Veja alguns dos nossos trabalhos e momentos especiais</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br   rounded-2xl  flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-full  bg-gradient-to-br from-teal-100  rounded-xl flex items-center justify-center mb-6">
+                        <img src="midia/Design sem nome.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br   rounded-2xl  flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-full  bg-gradient-to-br from-teal-100  rounded-xl flex items-center justify-center mb-6">
+                        <img src="midia/Design sem nome.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br   rounded-2xl  flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-full  bg-gradient-to-br from-teal-100  rounded-xl flex items-center justify-center mb-6">
+                        <img src="midia/Design sem nome.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br   rounded-2xl  flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-full  bg-gradient-to-br from-teal-100  rounded-xl flex items-center justify-center mb-6">
+                        <img src="midia/Design sem nome.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br   rounded-2xl  flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-full  bg-gradient-to-br from-teal-100  rounded-xl flex items-center justify-center mb-6">
+                        <img src="midia/Design sem nome.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br   rounded-2xl  flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-full  bg-gradient-to-br from-teal-100  rounded-xl flex items-center justify-center mb-6">
+                        <img src="midia/Design sem nome.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Entre em Contato</h2>
+                <p class="text-xl text-gray-600">Estamos prontos para ajudar você a recuperar sua mobilidade</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Formulário -->
+                <style>
+                    .p-8 {
+                        padding: 1rem;
+                    }
+                </style>
+
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Agende sua Avaliação</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nome Completo</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent" placeholder="Conte-nos sobre sua necessidade..."></textarea>
+                        </div>
+                        <button style="background-color: #3cc1c8;" type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Informações de Contato -->
+                <div class="space-y-8">
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Informações de Contato</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <svg class="w-6 h-6 text-teal-600 mt-1 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Endereço</h4>
+                                    <p class="text-gray-600">R. Carlos Vasconcelos, 2140<br>Aldeota, Fortaleza - CE,<br>CEP: 60115-044  </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <svg class="w-6 h-6 text-teal-600 mt-1 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Telefone</h4>
+                                    <p class="text-gray-600"> (19) 99398-9975</p>
+                                </div>
+                            </div>
+
+                         
+
+                            <div class="flex items-start">
+                                <svg class="w-6 h-6 text-teal-600 mt-1 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Horário de Funcionamento</h4>
+                                    <p class="text-gray-600">Segunda a Sexta: 8h às 18h<br></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mapa -->
+                   <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100">
+  <div class="flex items-center mb-4">
+    <svg class="w-6 h-6 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.899a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z"></path>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+    </svg>
+    <h3 class="text-2xl font-bold text-gray-900">Nossa Localização</h3>
+  </div>
+  <div class="w-full h-64 rounded-2xl overflow-hidden border border-gray-200 shadow-inner">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465.9388504162243!2d-38.51333005440847!3d-3.7406221870679373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74994fc1eb5f9%3A0xeda848d43e2198c4!2sProthera%20O%26P%20Service!5e0!3m2!1spt-BR!2sbr!4v1757981308936!5m2!1spt-BR!2sbr" 
+      width="100%" 
+      height="100%" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Logo e Descrição -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <svg class="w-10 h-10" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="#14b8a6" opacity="0.2"/>
+                            <path d="M25 35 Q35 25 50 35 Q65 25 75 35 Q70 45 60 50 Q70 55 75 65 Q65 75 50 65 Q35 75 25 65 Q30 55 40 50 Q30 45 25 35 Z" fill="#14b8a6"/>
+                            <circle cx="40" cy="40" r="3" fill="white"/>
+                            <circle cx="60" cy="40" r="3" fill="white"/>
+                        </svg>
+                        <div>
+                            <h3 class="text-2xl font-bold">PROTHERA</h3>
+                            <p class="text-teal-400">Órteses & Próteses</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Transformando vidas através da mobilidade com soluções personalizadas 
+                        em órteses e próteses de alta qualidade.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-teal-400 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-teal-400 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-teal-400 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-teal-400 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-300 hover:text-teal-400 transition-colors">Início</a></li>
+                        <li><a href="#sobre" class="text-gray-300 hover:text-teal-400 transition-colors">Sobre Nós</a></li>
+                        <li><a href="#servicos" class="text-gray-300 hover:text-teal-400 transition-colors">Serviços</a></li>
+                        <li><a href="#galeria" class="text-gray-300 hover:text-teal-400 transition-colors">Galeria</a></li>
+                        <li><a href="#contato" class="text-gray-300 hover:text-teal-400 transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>📍 R. Carlos Vasconcelos, 2140</p>
+                        <p> Aldeota, Fortaleza - CE, 60115-044</p>
+                        <p>📞  (19) 99398-9975</p>
+                    </div>
+                </div>
+            </div>
+
+           <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400">
+                © <span id="current-year"></span> Prothera - Órteses & Próteses. Todos os direitos reservados.
+            </p>
+        </div>
+        </div>
+    </footer>
+<script>
+    // Seleciona o elemento com o ID 'current-year'
+    const yearElement = document.getElementById('current-year');
+    
+    // Pega o ano atual
+    const currentYear = new Date().getFullYear();
+    
+    // Insere o ano no elemento selecionado
+    yearElement.textContent = currentYear;
+</script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('.faq-icon');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-content').forEach(otherContent => {
+                    if (otherContent !== content) {
+                        otherContent.classList.add('hidden');
+                        otherContent.previousElementSibling.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Toggle current FAQ
+                content.classList.toggle('hidden');
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const phone = this.querySelector('input[type="tel"]').value;
+            const message = this.querySelector('textarea').value;
+            
+            // Show success message
+            alert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso. Entraremos em contato em breve através do e-mail ${email} ou telefone ${phone}.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Scroll to contact function
+        function scrollToContact() {
+            document.getElementById('contato').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // Animate service cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Observe testimonial cards
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97fbe2b83584ba11',t:'MTc1Nzk3ODc1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,912 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próteses - Prothera | Devolvendo Movimento e Qualidade de Vida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal-custom': '#4FD1C7',
+                        'petrol': '#2C5F5D',
+                        'gray-light': '#F8F9FA'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body,
+        html {
+            /* Define a rolagem horizontal como oculta */
+            overflow-x: hidden;
+            /* Garante que o corpo e o html não excedam a largura da tela */
+            max-width: 100%;
+        }
+        .py-241 {
+            padding-top: 2rem;
+            padding-bottom: 6rem;
+        }
+    </style>
+
+
+</head>
+<body class="font-sans bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+              
+                <!-- Logo -->
+                <div class="flex items-center">
+                   <div class="flex items-center space-x-3">
+                        <img style="width: 100px;" src="LOGO PROTHERA O&P.jpeg" alt="logo">
+                    </div>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-petrol transition-colors">Início</a>
+                    <a href="Próteses.html" class="text-petrol font-semibold border-b-2 border-petrol pb-1">Próteses</a>
+                    <a href="Órteses.html" class="text-gray-700 hover:text-petrol transition-colors">Órteses</a>
+                    <a href="Coletes 3D.html" class="text-gray-700 hover:text-petrol transition-colors">Coletes 3D</a>
+                    <a href="Produção.html" class="text-gray-700 hover:text-petrol transition-colors">Produção</a>
+                    <a href="Blog.html" class="text-gray-700 hover:text-petrol transition-colors">Blog</a>
+                    <a href="Sobre Nós.html" class="text-gray-700 hover:text-petrol transition-colors">Sobre Nós</a>
+                </nav>
+                
+                <!-- CTA Button 
+                <button class="bg-teal-custom hover:bg-teal-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                    Agende uma Avaliação
+                </button>
+                -->
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#inicio" class="text-gray-700 hover:text-petrol py-2">Início</a>
+                    <a href="Próteses.html" class="text-petrol font-semibold py-2">Próteses</a>
+                    <a href="Órteses.html" class="text-gray-700 hover:text-petrol py-2">Órteses</a>
+                    <a href="Coletes 3D.html" class="text-gray-700 hover:text-petrol py-2">Coletes 3D</a>
+                    <a href="Produção.html" class="text-gray-700 hover:text-petrol py-2">Produção</a>
+                    <a href="Blog.html" class="text-gray-700 hover:text-petrol py-2">Blog</a>
+                    <a href="Sobre Nós.html" class="text-gray-700 hover:text-petrol py-2">Sobre Nós</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-gray-light to-white py-241">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 style="color: black;" class="text-4xl lg:text-6xl font-bold text-petrol mb-6 leading-tight">
+                        Próteses: <span class="text-teal-custom">Devolvendo Movimento e Qualidade de Vida.</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Soluções protéticas personalizadas para membros superiores e inferiores, com tecnologia de ponta e cuidado humanizado.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                       
+                        <button class="border-2 border-petrol text-petrol hover:bg-petrol hover:text-white px-8 py-4 rounded-lg font-medium text-lg transition-colors">
+                           <a href="https://wa.me/5519993989975">Agende uma Consulta</a> 
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Hero Image Placeholder -->
+                    <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-2xl p-12 text-center text-white relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+                        <div class="relative z-10">
+                            <svg class="w-32 h-32 mx-auto mb-6 opacity-90" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
+                            </svg>
+                            <h3 class="text-2xl font-semibold mb-2">Tecnologia Avançada</h3>
+                            <p class="text-lg opacity-90">Próteses que Transformam Vidas</p>
+                        </div>
+                        <!-- Decorative elements -->
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-white bg-opacity-20 rounded-full"></div>
+                        <div class="absolute bottom-4 left-4 w-12 h-12 bg-white bg-opacity-10 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What are Prosthetics -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-petrol mb-8">
+                        O Caminho para a Liberdade.
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Uma prótese é muito mais do que um dispositivo médico. É um instrumento de liberdade, projetado para substituir uma parte do corpo perdida e devolver não apenas a função física, mas também a confiança, a independência e a qualidade de vida.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Na Prothera, entendemos que cada pessoa tem necessidades únicas. Por isso, desenvolvemos próteses personalizadas que se adaptam perfeitamente ao seu corpo, ao seu estilo de vida e aos seus sonhos. Nosso objetivo é que você volte a fazer tudo aquilo que ama, sem limitações.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="bg-teal-custom rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-petrol">Confiança</h4>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-petrol rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-petrol">Independência</h4>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-teal-custom rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-petrol">Qualidade</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-gray-light to-white rounded-2xl p-8">
+                    <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-xl p-8 text-white text-center">
+                        <svg class="w-20 h-20 mx-auto mb-6 opacity-90" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A2.996 2.996 0 0 0 17.06 7H16c-.8 0-1.54.37-2.01.99L12 10.5 10.01 7.99A2.5 2.5 0 0 0 8 7H6.94c-1.4 0-2.63.93-3.01 2.27L1.5 16H4v6h4v-6h2v6h4z"/>
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2">Movimento Natural</h3>
+                        <p class="opacity-90">Tecnologia que imita os movimentos naturais do corpo humano</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Prosthetic Specialties -->
+    <section class="py-20 bg-gray-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-petrol mb-4">
+                    Tecnologia e Personalização.
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Oferecemos uma gama completa de próteses, cada uma desenvolvida com precisão e cuidado para atender às necessidades específicas de cada paciente.
+                </p>
+            </div>
+
+            <div class="space-y-20">
+                <!-- Upper Limb Prosthetics -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="bg-teal-custom rounded-full w-20 h-20 flex items-center justify-center mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23 5.5V20c0 2.2-1.8 4-4 4h-7.3c-1.08 0-2.1-.43-2.85-1.19L1 14.83s1.26-1.23 1.3-1.25c.22-.19.49-.29.79-.29.22 0 .42.06.6.16.04.01 4.31 2.46 4.31 2.46V4c0-.83.67-1.5 1.5-1.5S11 3.17 11 4v7h1V1.5c0-.83.67-1.5 1.5-1.5S15 .67 15 1.5V11h1V2.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V11h1V5.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-petrol mb-4">Funcionalidade para as Mãos e Braços.</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Nossas próteses para membros superiores combinam estética e funcionalidade. Oferecemos desde próteses cosméticas de alta qualidade até modelos mioelétricos avançados que respondem aos sinais musculares do usuário.
+                        </p>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <div class="bg-teal-custom rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-petrol">Próteses Cosméticas</h4>
+                                    <p class="text-gray-600 text-sm">Aparência natural com materiais de silicone de alta qualidade</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-teal-custom rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-petrol">Próteses Mioelétricas</h4>
+                                    <p class="text-gray-600 text-sm">Controle através de sinais musculares para movimentos precisos</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-teal-custom rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-petrol">Próteses Híbridas</h4>
+                                    <p class="text-gray-600 text-sm">Combinação de sistemas para máxima versatilidade</p>
+                                </div>
+                            </div>
+                        </div>
+<!--
+                        <button class="bg-petrol hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            Saiba Mais sobre Próteses de Braço
+                        </button>
+-->
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-xl p-12 text-center text-white">
+                            <svg class="w-24 h-24 mx-auto mb-4 opacity-90" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23 5.5V20c0 2.2-1.8 4-4 4h-7.3c-1.08 0-2.1-.43-2.85-1.19L1 14.83s1.26-1.23 1.3-1.25c.22-.19.49-.29.79-.29.22 0 .42.06.6.16.04.01 4.31 2.46 4.31 2.46V4c0-.83.67-1.5 1.5-1.5S11 3.17 11 4v7h1V1.5c0-.83.67-1.5 1.5-1.5S15 .67 15 1.5V11h1V2.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V11h1V5.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5z"/>
+                            </svg>
+                            <h4 class="text-xl font-semibold">Próteses de Membro Superior</h4>
+                            <p class="opacity-90 mt-2">Precisão e naturalidade em cada movimento</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lower Limb Prosthetics -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg lg:order-1">
+                        <div class="bg-gradient-to-br from-petrol to-teal-custom rounded-xl p-12 text-center text-white">
+                            <svg class="w-24 h-24 mx-auto mb-4 opacity-90" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
+                            </svg>
+                            <h4 class="text-xl font-semibold">Próteses de Membro Inferior</h4>
+                            <p class="opacity-90 mt-2">Estabilidade e mobilidade para todos os terrenos</p>
+                        </div>
+                    </div>
+                    <div class="lg:order-2">
+                        <div class="bg-petrol rounded-full w-20 h-20 flex items-center justify-center mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-petrol mb-4">A Força para Caminhar e Viver.</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Nossas próteses para membros inferiores são projetadas para proporcionar estabilidade, conforto e mobilidade em qualquer terreno. Utilizamos componentes de alta tecnologia, incluindo joelhos inteligentes e pés de fibra de carbono.
+                        </p>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <div class="bg-petrol rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-petrol">Próteses Modulares</h4>
+                                    <p class="text-gray-600 text-sm">Sistema flexível que se adapta às suas necessidades</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-petrol rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-petrol">Alta Performance Esportiva</h4>
+                                    <p class="text-gray-600 text-sm">Próteses especializadas para atletas e atividades intensas</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-petrol rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-petrol">Componentes de Carbono</h4>
+                                    <p class="text-gray-600 text-sm">Joelhos e pés avançados para máximo desempenho</p>
+                                </div>
+                            </div>
+                        </div>
+<!--
+                        <button class="bg-petrol hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            Saiba Mais sobre Próteses de Perna
+                        </button>
+-->
+                    </div>
+                </div>
+
+                <!-- Pediatric Prosthetics -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="bg-teal-custom rounded-full w-20 h-20 flex items-center justify-center mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-petrol mb-4">Crescendo com Liberdade.</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            As crianças merecem crescer sem limitações. Nossas próteses pediátricas são desenvolvidas especialmente para acompanhar o crescimento e desenvolvimento infantil, com designs coloridos e funcionais que estimulam a autoestima.
+                        </p>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <div class="bg-teal-custom rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-petrol">Acompanhamento Contínuo</h4>
+                                    <p class="text-gray-600 text-sm">Ajustes regulares conforme o crescimento da criança</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-teal-custom rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-petrol">Designs Personalizados</h4>
+                                    <p class="text-gray-600 text-sm">Cores e temas que estimulam a criatividade e autoestima</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-teal-custom rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-petrol">Suporte Familiar</h4>
+                                    <p class="text-gray-600 text-sm">Orientação completa para pais e cuidadores</p>
+                                </div>
+                            </div>
+                        </div>
+<!--
+                        <button class="bg-petrol hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            Saiba Mais sobre Próteses Infantis
+                        </button>
+-->
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-xl p-12 text-center text-white relative overflow-hidden">
+                            <div class="absolute top-4 right-4 text-6xl opacity-20">🌈</div>
+                            <svg class="w-24 h-24 mx-auto mb-4 opacity-90" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            <h4 class="text-xl font-semibold">Próteses Pediátricas</h4>
+                            <p class="opacity-90 mt-2">Crescimento saudável e feliz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Process -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-petrol mb-4">
+                    Do Encaixe Perfeito ao Resultado Final.
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Nosso processo de fabricação combina tecnologia avançada com cuidado artesanal, garantindo que cada prótese seja única e perfeita para você.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center relative">
+                    <div class="bg-teal-custom rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 relative z-10">
+                        <span class="text-white font-bold text-2xl">1</span>
+                    </div>
+                    <div class="absolute top-10 left-1/2 w-full h-0.5 bg-gray-200 hidden lg:block"></div>
+                    <h3 class="text-xl font-semibold text-petrol mb-4">Avaliação Inicial</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Primeiro encontro para entender suas necessidades, objetivos e estilo de vida. Avaliamos sua condição física e discutimos expectativas.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center relative">
+                    <div class="bg-petrol rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 relative z-10">
+                        <span class="text-white font-bold text-2xl">2</span>
+                    </div>
+                    <div class="absolute top-10 left-1/2 w-full h-0.5 bg-gray-200 hidden lg:block"></div>
+                    <h3 class="text-xl font-semibold text-petrol mb-4">Molde e Escaneamento</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Captura precisa das medidas usando tecnologia 3D de última geração, eliminando desconfortos dos moldes tradicionais.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center relative">
+                    <div class="bg-teal-custom rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 relative z-10">
+                        <span class="text-white font-bold text-2xl">3</span>
+                    </div>
+                    <div class="absolute top-10 left-1/2 w-full h-0.5 bg-gray-200 hidden lg:block"></div>
+                    <h3 class="text-xl font-semibold text-petrol mb-4">Fabricação Personalizada</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Criação da prótese em nosso laboratório especializado, utilizando materiais de alta qualidade e tecnologia de ponta.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center">
+                    <div class="bg-petrol rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white font-bold text-2xl">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-petrol mb-4">Ajustes e Treinamento</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Fase de adaptação com ajustes finos e treinamento fisioterapêutico para uso confortável e seguro da prótese.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-gradient-to-r from-teal-custom to-petrol rounded-2xl p-8 text-white text-center">
+                <h3 class="text-2xl font-semibold mb-4">Processo Completo em 4 Etapas</h3>
+                <p class="text-lg opacity-90 mb-6">Da primeira consulta até o uso diário, acompanhamos você em cada passo da jornada.</p>
+                <button class="bg-white text-petrol px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                   <a href="https://wa.me/5519993989975">Agende sua Avaliação Gratuita</a> 
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Gallery -->
+    <section class="py-20 bg-gray-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-petrol mb-4">
+                    Casos de Sucesso que Inspiram.
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Cada prótese conta uma história de superação. Veja como nossas soluções transformam vidas e devolvem sonhos.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="bg-gradient-to-br from-teal-custom to-petrol h-48 flex items-center justify-center relative">
+                        <div class="text-white text-center">
+                            <svg class="w-16 h-16 mx-auto mb-4 opacity-90" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/>
+                            </svg>
+                            <h4 class="text-lg font-semibold">Volta ao Esporte</h4>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">
+                            Prótese de Perna
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-petrol mb-2">Maratonista Determinado</h3>
+                        <p class="text-gray-600 text-sm mb-4">João voltou a correr maratonas após receber sua prótese personalizada de alta performance.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                            6 meses de adaptação
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="bg-gradient-to-br from-petrol to-teal-custom h-48 flex items-center justify-center relative">
+                        <div class="text-white text-center">
+                            <svg class="w-16 h-16 mx-auto mb-4 opacity-90" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23 5.5V20c0 2.2-1.8 4-4 4h-7.3c-1.08 0-2.1-.43-2.85-1.19L1 14.83s1.26-1.23 1.3-1.25c.22-.19.49-.29.79-.29.22 0 .42.06.6.16.04.01 4.31 2.46 4.31 2.46V4c0-.83.67-1.5 1.5-1.5S11 3.17 11 4v7h1V1.5c0-.83.67-1.5 1.5-1.5S15 .67 15 1.5V11h1V2.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V11h1V5.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5z"/>
+                            </svg>
+                            <h4 class="text-lg font-semibold">Retorno Profissional</h4>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">
+                            Prótese de Braço
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-petrol mb-2">Engenheira Inovadora</h3>
+                        <p class="text-gray-600 text-sm mb-4">Maria retomou sua carreira na engenharia com uma prótese mioelétrica de alta precisão.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                            4 meses de treinamento
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="bg-gradient-to-br from-teal-custom to-petrol h-48 flex items-center justify-center relative">
+                        <div class="text-white text-center">
+                            <svg class="w-16 h-16 mx-auto mb-4 opacity-90" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            <h4 class="text-lg font-semibold">Infância Feliz</h4>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">
+                            Prótese Infantil
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-petrol mb-2">Pequeno Grande Herói</h3>
+                        <p class="text-gray-600 text-sm mb-4">Pedro, de 8 anos, brinca e estuda normalmente com sua prótese colorida personalizada.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                            Acompanhamento contínuo
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+<!--
+                <button class="bg-petrol hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                    Ver Mais Casos de Sucesso
+                </button>
+-->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-petrol mb-4">
+                    Tiramos Suas Dúvidas.
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Respostas para as perguntas mais frequentes sobre nossas próteses.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-gray-light rounded-xl p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(1)">
+                        <h3 class="text-lg font-semibold text-petrol">Qual o material das próteses?</h3>
+                        <svg id="faq-icon-1" class="w-6 h-6 text-petrol transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-1" class="hidden mt-4 text-gray-600 leading-relaxed">
+                        Utilizamos materiais de alta qualidade como fibra de carbono, titânio, alumínio aeronáutico e silicones médicos. Todos os materiais são biocompatíveis, leves e duráveis, garantindo conforto e segurança no uso diário.
+                    </div>
+                </div>
+
+                <div class="bg-gray-light rounded-xl p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(2)">
+                        <h3 class="text-lg font-semibold text-petrol">Quanto tempo dura o processo de fabricação?</h3>
+                        <svg id="faq-icon-2" class="w-6 h-6 text-petrol transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-2" class="hidden mt-4 text-gray-600 leading-relaxed">
+                        O processo completo leva entre 3 a 6 semanas, dependendo da complexidade da prótese. Isso inclui avaliação, molde, fabricação e ajustes finais. Para casos urgentes, temos protocolos acelerados.
+                    </div>
+                </div>
+
+                <div class="bg-gray-light rounded-xl p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(3)">
+                        <h3 class="text-lg font-semibold text-petrol">Onde posso fazer a manutenção?</h3>
+                        <svg id="faq-icon-3" class="w-6 h-6 text-petrol transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-3" class="hidden mt-4 text-gray-600 leading-relaxed">
+                        Oferecemos manutenção completa em nossa clínica. Também temos parcerias em outras cidades e serviço de suporte remoto. A manutenção preventiva é recomendada a cada 6 meses.
+                    </div>
+                </div>
+
+                <div class="bg-gray-light rounded-xl p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(4)">
+                        <h3 class="text-lg font-semibold text-petrol">A prótese causa dor?</h3>
+                        <svg id="faq-icon-4" class="w-6 h-6 text-petrol transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-4" class="hidden mt-4 text-gray-600 leading-relaxed">
+                        Uma prótese bem ajustada não deve causar dor. Durante o período de adaptação, é normal sentir algum desconforto, mas nossa equipe faz todos os ajustes necessários para garantir o máximo conforto.
+                    </div>
+                </div>
+
+                <div class="bg-gray-light rounded-xl p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(5)">
+                        <h3 class="text-lg font-semibold text-petrol">Qual a durabilidade de uma prótese?</h3>
+                        <svg id="faq-icon-5" class="w-6 h-6 text-petrol transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-5" class="hidden mt-4 text-gray-600 leading-relaxed">
+                        Com uso adequado e manutenção regular, uma prótese pode durar de 3 a 5 anos. Componentes específicos podem ter durabilidades diferentes, e oferecemos garantia de 2 anos para defeitos de fabricação.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-petrol mb-4">
+                    Histórias que Transformam.
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Depoimentos reais de pessoas que recuperaram sua liberdade com nossas próteses.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-lg relative">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-teal-custom rounded-full w-16 h-16 flex items-center justify-center text-white font-bold text-xl">
+                            A
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-petrol text-lg">André Silva</h4>
+                            <p class="text-gray-500 text-sm">Atleta Paralímpico</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">
+                        "Minha prótese de corrida me levou às Paralimpíadas. A Prothera não apenas criou um equipamento, mas devolveu meus sonhos e me fez acreditar que tudo é possível!"
+                    </p>
+                    <div class="absolute top-6 right-6 text-teal-custom text-4xl opacity-20">"</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg relative">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-petrol rounded-full w-16 h-16 flex items-center justify-center text-white font-bold text-xl">
+                            L
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-petrol text-lg">Lucia Santos</h4>
+                            <p class="text-gray-500 text-sm">Pianista</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">
+                        "Voltei a tocar piano profissionalmente com minha prótese mioelétrica. A precisão dos movimentos é incrível. Sinto como se fosse minha própria mão!"
+                    </p>
+                    <div class="absolute top-6 right-6 text-teal-custom text-4xl opacity-20">"</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg relative">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-teal-custom rounded-full w-16 h-16 flex items-center justify-center text-white font-bold text-xl">
+                            R
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-petrol text-lg">Roberto Lima</h4>
+                            <p class="text-gray-500 text-sm">Pai de Família</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">
+                        "Posso brincar com meus filhos, trabalhar e viver normalmente. A prótese se tornou parte de mim. Gratidão eterna à equipe da Prothera!"
+                    </p>
+                    <div class="absolute top-6 right-6 text-teal-custom text-4xl opacity-20">"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-petrol to-teal-custom text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+                Pronto para Dar o Próximo Passo?
+            </h2>
+            <p class="text-xl mb-8 opacity-90 leading-relaxed">
+                Nossa equipe de especialistas está pronta para te ajudar a encontrar a prótese ideal para o seu objetivo. Agende sua avaliação gratuita e comece sua jornada de transformação hoje mesmo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-petrol px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                    <a href="https://wa.me/5519993989975">Agende Sua Avaliação Gratuita</a>
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-petrol transition-colors">
+                   <a href="https://wa.me/5519993989975">Fale Conosco Agora</a> 
+                </button>
+            </div>
+            <div class="mt-8 flex justify-center items-center space-x-8 text-sm opacity-80">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    Consulta Gratuita
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    Sem Compromisso
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    Atendimento Especializado
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+  
+    <footer class="bg-petrol text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mt-12 mb-8 px-4 sm:px-6 lg:px-8">
+                    <div class="bg-gray-700 rounded-xl overflow-hidden shadow-lg">
+                        <div class="relative" style="padding-top: 56.25%;">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.014044764572!2d-38.513461299999996!3d-3.7406110999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74994fc1eb5f9%3A0xeda848d43e2198c4!2sProthera%20O%26P%20Service!5e1!3m2!1spt-BR!2sbr!4v1758393982674!5m2!1spt-BR!2sbr" 
+                                class="absolute inset-0 w-full h-full" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="p-8 text-white text-center">
+                            <h4 class="text-2xl font-bold mb-2">Nossa Localização</h4>
+                            <p class="text-gray-300">Endereço da Empresa</p>
+                            <p class="text-gray-400 mt-2">Clique no mapa para rotas</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+
+                
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white text-petrol px-4 py-2 rounded-lg font-bold text-xl mb-6 inline-block">
+                        PROTHERA
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Transformando vidas através da tecnologia ortopédica com qualidade, inovação e cuidado humanizado. Há mais de 15 anos devolvendo movimento, liberdade e vida aos nossos pacientes.
+                    </p>
+                    <!--
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white bg-opacity-10 p-3 rounded-full hover:bg-opacity-20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-10 p-3 rounded-full hover:bg-opacity-20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-10 p-3 rounded-full hover:bg-opacity-20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-10 p-3 rounded-full hover:bg-opacity-20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    --> 
+                </div>
+                
+                <!-- Navigation -->
+                <div>
+                    <h4 class="font-semibold mb-6 text-lg">Navegação</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Início</a></li>
+                        <li><a href="Próteses.html" class="hover:text-white transition-colors">Próteses</a></li>
+                        <li><a href="Órteses.html" class="hover:text-white transition-colors">Órteses</a></li>
+                        <li><a href="Coletes 3D.html" class="hover:text-white transition-colors">Coletes 3D</a></li>
+                        <li><a href="Sobre Nós.html" class="hover:text-white transition-colors">Sobre Nós</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-6 text-lg">Serviços</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="Produção.html" class="hover:text-white transition-colors">Produção</a></li>
+                        <li><a href="Blog.html" class="hover:text-white transition-colors">Blog</a></li>
+                     
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-6 text-lg">Contato</h4>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <p>R. Carlos Vasconcelos, 2140 - Aldeota, <br>Fortaleza - CE, 60115-044</p>
+                        <p> (19) 99398-9975
+                    
+                        <div class="mt-4">
+                            <p class="font-medium text-white mb-2">Horário:</p>
+                            <p>Seg-Sex: 08:00h às 18:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-600 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                    <p class="text-gray-300">© 2025 Prothera. Todos os direitos reservados.</p>
+
+                   
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleFAQ(index) {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9821af30105eba11',t:'MTc1ODM3NTA5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
