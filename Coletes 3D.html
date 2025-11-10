@@ -146,6 +146,39 @@
 
 
 </head>
+
+
+
+    <style>
+    .bg-white{
+        background-color: #000000;
+    }
+    .bg-gray-light{
+        background-color: #000000;
+    }
+    svg {
+    display: block;
+    vertical-align: middle;
+    
+    color: white;
+}
+
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        background-color: black;
+    }
+}
+
+.from-gray-light {
+    --tw-gradient-from: #000000 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(248 249 250 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+</style>
+
+
 <body class="font-sans bg-white">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">

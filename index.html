@@ -33,6 +33,7 @@
             overflow-x: hidden;
             /* Garante que o corpo e o html não excedam a largura da tela */
             max-width: 100%;
+            background-color: #000000;
         }
     </style>
 
@@ -139,6 +140,24 @@
 
 </head>
 
+<style>
+    .bg-white{
+        background-color: #000000;
+        
+    }
+    .bg-gray-light{
+        background-color: #000000;
+    }
+    svg {
+    display: block;
+    vertical-align: middle;
+    
+    color: white;
+}
+
+
+</style>
+
 <body class="font-sans bg-white">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
@@ -188,6 +207,10 @@
 
                   
                 }
+                .text-gray-700 {
+    --tw-text-opacity: 1;
+    color: white;
+        }
             </style>
 
             <!-- Mobile Menu -->
@@ -211,10 +234,12 @@
 
 
          <style>
-        body { font-family: 'Poppins', sans-serif; }
+        body { font-family: 'Poppins', sans-serif; 
+            background-color: #000000;
+    }
 
         .hero-bg {
-            background-image: url('midia/Design\ sem\ nome.gif');
+            background-image: url('01.gif');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -240,6 +265,30 @@
             background-color: #3cc1c8; 
             color: #000000;
         }
+
+        img, video {
+            max-width: 119%;
+            height: auto;
+       }
+        .from-teal-custom {
+            --tw-gradient-from: #000000 var(--tw-gradient-from-position); 
+            --tw-gradient-to: rgb(79 209 199 / 0) var(--tw-gradient-to-position);
+            
+        }
+
+        .to-teal-custom {
+            --tw-gradient-to: #000000 var(--tw-gradient-to-position);
+        }
+        .from-petrol {
+            --tw-gradient-from: #000000 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(44 95 93 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+        .bg-petrol {
+            --tw-bg-opacity: 1;
+            background-color: rgb(0 0 0);
+        }
+      
     </style>
 
     
@@ -247,10 +296,10 @@
         <div class="hero-bg py-20 lg:py-32  mx-auto px-4 sm:px-6 lg:px-8"  >
             <div class="grid lg:grid-cols-2 gap-12 items-center" >
                 <div>
-                    <h1 style="color: black;" class="text-4xl lg:text-6xl font-bold text-petrol mb-6 leading-tight">
+                    <h1 style="color: rgb(255, 255, 255);" class="text-4xl lg:text-6xl font-bold text-petrol mb-6 leading-tight">
                         Movimento, Liberdade e Vida. <span class="text-teal-custom">Seu futuro começa aqui.</span>
                     </h1>
-                    <p style="color: #000000;"  class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    <p style="color: #ffffff;"  class="text-xl text-gray-600 mb-8 leading-relaxed">
                         Soluções personalizadas em próteses, órteses e coletes 3D. Qualidade, inovação e cuidado humanizado para você e sua família.
                     </p>
                     
@@ -321,6 +370,8 @@
                 </p>
             </div>
 
+            
+
             <div class="space-y-16">
                 <!-- Próteses -->
                 <div id="proteses" class="grid lg:grid-cols-2 gap-12 items-center">
@@ -349,9 +400,11 @@
                     </div>
                     <div class="bg-white rounded-2xl p-8 shadow-lg">
                         <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-xl p-12 text-center text-white">
-                            <svg class="w-24 h-24 mx-auto mb-4 opacity-90" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
+
+                            <div class="w-full  bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl flex items-center justify-center mb-6">
+                                <img src="midia/Design sem nome.gif" alt="">
+                            </div>
+
                             <h4 class="text-xl font-semibold">Próteses Avançadas</h4>
                             <p class="opacity-90 mt-2">Tecnologia que devolve movimento</p>
                         </div>
@@ -362,18 +415,22 @@
                 <div id="orteses" class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="bg-white rounded-2xl p-8 shadow-lg lg:order-1">
                         <div class="bg-gradient-to-br from-petrol to-teal-custom rounded-xl p-12 text-center text-white">
-                            <svg class="w-24 h-24 mx-auto mb-4 opacity-90" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                            </svg>
+
+                            <div class="w-full  bg-gradient-to-br  to-teal-200 rounded-xl flex items-center justify-center mb-6">
+                                <img src="midia/Design sem nome.gif" alt="">
+                            </div>
+
                             <h4 class="text-xl font-semibold">Órteses Personalizadas</h4>
                             <p class="opacity-90 mt-2">Suporte e estabilização</p>
                         </div>
                     </div>
                     <div class="lg:order-2">
                         <div class="bg-petrol rounded-full w-20 h-20 flex items-center justify-center mb-6">
+                            
                             <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
                             </svg>
+                            
                         </div>
                         <h3 class="text-2xl font-bold text-petrol mb-4">Soluções Ortopédicas Personalizadas</h3>
                         <p class="text-gray-600 mb-6 leading-relaxed">
@@ -398,9 +455,11 @@
                 <div id="coletes" class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="bg-teal-custom rounded-full w-20 h-20 flex items-center justify-center mb-6">
+                            
                             <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
                             </svg>
+                            
                         </div>
                         <h3 class="text-2xl font-bold text-petrol mb-4">Coletes 3D para Escoliose e Deformidades</h3>
                         <p class="text-gray-600 mb-6 leading-relaxed">
@@ -421,9 +480,13 @@
                     </div>
                     <div class="bg-white rounded-2xl p-8 shadow-lg">
                         <div class="bg-gradient-to-br from-teal-custom to-petrol rounded-xl p-12 text-center text-white">
-                            <svg class="w-24 h-24 mx-auto mb-4 opacity-90" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                            </svg>
+
+                             <div class="w-full  bg-gradient-to-br  to-teal-200 rounded-xl flex items-center justify-center mb-6">
+                                <img src="midia/Design sem nome.gif" alt="">
+                            </div>
+
+
+
                             <h4 class="text-xl font-semibold">Tecnologia 3D</h4>
                             <p class="opacity-90 mt-2">Precisão e conforto únicos</p>
                         </div>
